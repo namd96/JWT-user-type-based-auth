@@ -12,10 +12,10 @@ router.post('/auth/login', function (req, res) {
     console.log("login called ")
     var body = req.body;
 
-    authenticator.createToken({ un: req.body.un, pw: req.body.pw , type : req.body.type})
+   let token= authenticator.createToken({ un: req.body.un, pw: req.body.pw , type : req.body.type})
 
     console.log("login called ")
-    res.json({ login: true })
+    res.json({ login: true, token  })
 })
 
 module.exports = router
